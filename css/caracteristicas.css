@@ -1,0 +1,188 @@
+/* GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/banner_segundario.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* MENU */
+.container-menu {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    background: url('../img/barra.menu_cabeçalho.png');
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    white-space: nowrap;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #E04FFF;
+    font-size: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Terceiro', sans-serif;
+}
+
+.menu a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.menu li:hover {
+    transform: scale(1.1);
+}
+
+/* RODAPE */
+/*.rodape {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    background: url('../img/barra.menu_cabeçalho.png');
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 10;
+}*/
+
+/*fontes*/
+@font-face {
+  font-family: Segundo;
+  src: url('../font/chromium-one-std.otf') format('OpenType');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Terceiro;
+  src: url('../font/genty-regular.ttf') format('TrueType');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Quatro;
+  src: url('../font/cooper-black-bt.ttf') format('TrueType');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1100px;  
+    margin: auto;
+    text-align: center;
+    background: rgba(164, 246, 252, 0.699);
+    margin: 90px;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+/* TÍTULO */
+.titulo {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #E04FFF;
+    font-family: 'Terceiro', sans-serif;
+}
+
+/* === LINHA COM 2 ITENS === */
+.linha-2-topo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+    
+}
+
+/* === GRADE 3x3 === */
+.grade-3-colunas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* === CARDS === */
+.card {
+    background-color: #dba4ff;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: 10%;    /* diminuído para caber melhor */
+    background-position: center;
+
+    margin: 5px;
+    height: 90px;           /* menor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: px;
+    font-size: 15px;         /* menor */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* === RESPONSIVO SEM QUEBRAR TELA === */
+@media (max-width: 900px) {
+
+    .linha-2-topo {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .grade-3-colunas {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .card {
+        height: 110px;
+        font-size: 15px;
+        background-size: 90%;
+    }
+}

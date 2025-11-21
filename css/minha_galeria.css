@@ -1,0 +1,274 @@
+/*Geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../img/banner_segundario.png");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* MENU */
+.container-menu {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    background: url('../img/barra.menu_cabeçalho.png');
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.menu::-webkit-scrollbar {
+    display: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    white-space: nowrap;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #E04FFF;
+    font-size: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Terceiro', sans-serif;
+}
+
+.menu a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.menu li:hover {
+    transform: scale(1.1);
+}
+
+/* RODAPE */
+/*.rodape {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    background: url('../img/barra.menu_cabeçalho.png');
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 10;
+}*/
+
+/*fim menu*/
+
+/*galeria*/
+.minha-galeria {
+    min-height: 100vh;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: -100px;
+}
+
+.minha-galeria h2 {
+    color: #E04FFF;
+    font-family: 'Terceiro', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
+.gallery {
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    overflow: hidden;
+    perspective: 1000px;
+    margin-top: 50px;  
+}
+/*galeria imagens*/
+.gallery .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 380px;
+    height: 470px;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0.4;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.gallery .card img {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+}
+
+.gallery .card.ativo {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+.gallery .card.left {
+    transform: translate(calc(-50% - 260px), -50%) scale(0.85) rotateY(15deg);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.gallery .card.right {
+    transform: translate(calc(-50% + 260px), -50%) scale(0.85) rotateY(-15deg);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: transparent;
+    border-radius: 16px;
+}
+
+/*modelo dos botoes*/
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(13, 1, 22, 0.8);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 15;
+}
+
+.btn:hover {
+    background: #8f3ee0;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn.prev {
+    position: absolute;
+    left: 30%;
+}
+
+.btn.next {
+    position: absolute;
+    right: 30%;
+}
+
+/*fontes*/
+@font-face {
+  font-family: Segundo;
+  src: url('../font/chromium-one-std.otf') format('OpenType');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Terceiro;
+  src: url('../font/genty-regular.ttf') format('TrueType');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Quatro;
+  src: url('../font/cooper-black-bt.ttf') format('TrueType');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ============================= */
+/* 📌 TABLETS (até 992px) */
+/* ============================= */
+@media (max-width: 992px) {
+
+    body {
+        padding-top: 150px;
+        background-size: cover;
+    }
+
+    /* Menu */
+    .container-menu {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+    .menu li a {
+        font-size: 24px;
+    }
+
+    /* Galeria */
+    .minha-galeria {
+        padding: 40px 10px;
+        margin-top: -50px;
+    }
+
+    .gallery {
+        height: 60vh;
+    }
+
+    .gallery .card {
+        width: 300px;
+        height: 380px;
+    }
+
+    .gallery .card.left {
+        transform: translate(calc(-50% - 200px), -50%) scale(0.85) rotateY(12deg);
+    }
+
+    .gallery .card.right {
+        transform: translate(calc(-50% + 200px), -50%) scale(0.85) rotateY(-12deg);
+    }
+
+    /* Botões */
+    .btn.prev {
+        left: 35%;
+    }
+
+    .btn.next {
+        right: 35%;
+    }
+}

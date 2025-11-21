@@ -1,5 +1,5 @@
 body {
-    background: #ff9999 url("/img/banner_home.png"); 
+    background: #ff9999 url("../img/banner_home.png"); 
     text-align: center;  
     background-repeat: no-repeat;
     background-size: cover;
